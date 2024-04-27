@@ -9,15 +9,16 @@ const VideoBackground = ({movieId}) => {
 
   useMovieTrailer(movieId)
 
-  
   return (
     <div>
-      <iframe className='w-screen aspect-video'
-src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1`}
-title="YouTube video player"
-          ></iframe>
+      <iframe
+        className='w-screen aspect-video mt-[-1%] md:mt-[-38%]'
+        src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1`}
+        title="YouTube video player"
+        style={{ backgroundColor: 'transparent' }} // Adjust background color
+      ></iframe>
     </div>
   )
-}
 
+}
 export default VideoBackground

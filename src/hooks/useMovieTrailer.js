@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import { API_OPTIONS } from '../utils/constant'
 import movieSlice, { addTrailerVideo } from '../utils/movieSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // Now you can use the 'options' object
 
 const useMovieTrailer=(movieId)=>{
     const dispatch=useDispatch()
+
+    const trailerVideo=useSelector((store)=>store.movies.trailerVideo)
 
 
 
@@ -20,7 +22,7 @@ const useMovieTrailer=(movieId)=>{
      }
    
      useEffect(()=>{
-        getMovieVideo()
+      if(!trailerVideo)getMovieVideo()
      },[])
 }
 export default useMovieTrailer

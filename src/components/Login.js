@@ -10,6 +10,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_URL } from "../utils/constant";
 
 
 
@@ -126,10 +127,11 @@ const Login = () => {
       <h1>
         <Header />
       </h1>
-      <div className=" w-full bg-gradient-to-tr from-black absolute">
+      <div className="w-full md:w-full bg-gradient-to-tr from-black absolute  bg-w-[50%]">
+  
         <img
-          className="w-screen h-full"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/9f46b569-aff7-4975-9b8e-3212e4637f16/453ba2a1-6138-4e3c-9a06-b66f9a2832e4/IN-en-20240415-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          className="w-screen h-screen object-cover"
+          src={BG_URL}
           alt=""
         />
       </div>
@@ -137,7 +139,7 @@ const Login = () => {
         <form
           action=""
           onSubmit={(e) => e.preventDefault()}
-          className={`bg-black p-12 w-3/12 left-0 right-0 absolute items-center my-24 mx-auto h-150 rounded-lg bg-opacity-80 transition-all duration-500 transform ${
+          className={`bg-black p-12 w-full md:w-3/12 left-0 right-0 absolute items-center my-24 mx-auto h-150 rounded-lg bg-opacity-80 transition-all duration-500 transform ${
             isSignin ? "" : "animate-jump"
           }`}
         >
